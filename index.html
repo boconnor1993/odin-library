@@ -7,14 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="card-container"></div>
-    <form action="">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <button type="submit"></button>
-    </form>
+    <header><nav>
+        <h2><a href="#">Library</a></h2>
+    </nav></header>
+    <article>
+        <div id="card-container"></div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="bookForm">
+                <!-- Form items -->
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+                <label for="numPages">Number of Pages:</label>
+                <input type="number" id="numPages" name="numPages">
+                <label>Book Read:</label>
+                <input type="radio" id="readTrue" name="read" value="true"> Yes
+                <input type="radio" id="readFalse" name="read" value="false"> No
+                <!-- Submit button -->
+                <input type="submit" value="Add Book">
+            </form>
+            </div>
+        </div>
+        
+        <!-- The Button -->
+        <button id="newBookBtn">New Book</button>
+    </article>
     <script src="index.js" defer></script>
 </body>
 </html>
