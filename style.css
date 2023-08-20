@@ -43,34 +43,149 @@ nav h2 a{
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background */
+    transition: opacity 0.3s; /* Smooth fade-in effect */
+}
+
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    background-color: #fff;
+    margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border: none;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative; /* Added this line */
 }
-  
+
+/* Form styling */
+.modal-content form label {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center the contents */
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+
+/* New class for radio button group */
+.radio-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Label Styling for Radio Buttons */
+.modal-content form label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Boldness for specific labels */
+.modal-content form label[for="title"],
+.modal-content form label[for="author"],
+.modal-content form label[for="numPages"],
+.modal-content form label[id="bookRead"] {
+    font-weight: bold;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="number"],
+.modal-content form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Radio Button Styling */
+.modal-content form input[type="radio"] {
+    margin-right: 5px; /* Increased spacing between radio and label */
+    width: 20px; /* Size */
+    height: 20px;
+    cursor: pointer; /* Hand cursor on hover */
+    border-radius: 50%; /* Make them round */
+    border: 2px solid #ccc; /* Border */
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none; /* Remove default appearance for Webkit browsers */
+    -moz-appearance: none; /* Remove default appearance for Firefox */
+    background-color: #fff; /* Background color */
+    position: relative; /* For the custom indicator positioning */
+}
+
+/* Radio Button Checked State */
+.modal-content form input[type="radio"]:checked {
+    border: 2px solid blueviolet; /* Highlight color when checked */
+}
+
+/* Custom indicator for checked state */
+.modal-content form input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+
+/* Radio Button Hover State */
+.modal-content form input[type="radio"]:hover {
+    border: 2px solid blueviolet; /* Highlight color on hover */
+}
+
+/* Radio Button Focus State */
+.modal-content form input[type="radio"]:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.6); /* Custom focus ring */
+}
+
+/* Label Styling for Radio Buttons */
+.modal-content form input[type="radio"] + label {
+    vertical-align: middle; /* Vertically center with the radio button */
+    margin-right: 30px; 
+    cursor: pointer; 
+    display: inline-block; /* Allows for setting of height and line-height */
+}
+
+.modal-content form input[type="submit"] {
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-top: 15px;
+}
+
+.modal-content form input[type="submit"]:hover {
+    margin-top: 12px;
+    background-color: white;
+    color: blueviolet;
+    border: solid blueviolet;
+}
+
 /* The Close Button */
 .close {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    position: absolute; 
+    top: 10px;  /* Adjusted to push it down slightly */
+    right: 20px;  /* Adjusted to push it inward from the right */
+    font-size: 24px;
     font-weight: bold;
 }
-  
+
 .close:hover,
 .close:focus {
     color: black;
@@ -78,21 +193,29 @@ nav h2 a{
     cursor: pointer;
 }
 
+
 /* Article */
 article {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
 
 #newBookBtn {
-    padding: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     font-size: large;
     background-color: blueviolet;
     color: white;
     border: none;
+}
+
+#newBookBtn:hover {
+    background-color: white;
+    color: blueviolet;
+    border: solid blueviolet;
 }
 
 .book {
