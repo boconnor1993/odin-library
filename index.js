@@ -73,3 +73,37 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
+// Listen for Add Book button to be submitted
+const bookForm = document.getElementById('bookForm');
+
+// Listen for submission
+bookForm.addEventListener('submit', function(event) {
+    // Prevent default submit button behaviour
+    event.preventDefault();
+
+    // Get form values
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const numPages = document.getElementById('numPages').value;
+    const readTrue = document.getElementById('readTrue').checked;
+    const readFalse = document.getElementById('readFalse').checked;
+
+    // Validate form completeness
+    if (title && author && numPages && (readTrue || readFalse)) {
+
+        const bookRead = readTrue ? true : false;
+
+        // Add book to library, then clear form data and display cards
+        addBookToLibrary(title, author, numPages, bookRead);
+        bookForm.reset();
+        modal.style.display = 'none';
+        while (divInsertElement.firstChild) {
+            divInsertElement.removeChild(divInsertElement.firstChild);
+        }
+        displayMyLibrary(myLibrary);
+    }
+    else {
+        alert('Please complete all fields')
+    }
+})
