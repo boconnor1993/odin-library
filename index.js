@@ -9,7 +9,7 @@ function Book(title, author, numPages, bookRead) {
     this.numPages = numPages;
     this.bookRead = bookRead;
 
-    this.bookReadString = this.bookRead ? 'book read' : 'not read yet';
+    this.bookReadString = this.bookRead ? 'Book read' : 'Not read yet';
 
     this.info = function() {
         return `${this.title} by ${this.author}, ${this.numPages} pages, ${this.bookReadString}`;
@@ -24,32 +24,76 @@ function addBookToLibrary(title, author, numPages, bookRead) {
 
 // Create the cards and add them to the html
 function displayMyLibrary(myLibrary) {
-    myLibrary.forEach(book => {
+    // Clear existing cards
+    while (divInsertElement.firstChild) {
+        divInsertElement.removeChild(divInsertElement.firstChild);
+    }
+
+    myLibrary.forEach((book, index) => {
         // Create the card container and give it a class of book
         const bookDiv = document.createElement('div');
         bookDiv.classList.add('book');
 
         // Add in the elements to the card
+        // Add title
         const titlePara = document.createElement('p');
         titlePara.textContent = book.title;
         titlePara.classList.add('title');
         bookDiv.appendChild(titlePara);
 
+        // Add detail container
+        const detailContainer = document.createElement('div');
+        detailContainer.classList.add('detail-container')
+        // Add author
         const authorPara = document.createElement('p');
         authorPara.textContent = book.author;
-        bookDiv.appendChild(authorPara);
+        detailContainer.appendChild(authorPara);
 
+        // Add numPages
         const numPagesPara = document.createElement('p');
         numPagesPara.textContent = `${book.numPages} pages`;
-        bookDiv.appendChild(numPagesPara);
+        detailContainer.appendChild(numPagesPara);
 
+        // Add bookRead
         const bookReadPara = document.createElement('p');
         bookReadPara.textContent = book.bookReadString;
-        bookDiv.appendChild(bookReadPara);
+        detailContainer.appendChild(bookReadPara);
+
+        bookDiv.appendChild(detailContainer);
+
+        // Add icons into a container
+        const iconContainer = document.createElement('div');
+        iconContainer.classList.add('icon-container');
+        // Add readIcon
+        const readIcon = document.createElement('i');
+        readIcon.className = 'bx bxs-book-add';
+        readIcon.addEventListener('click', function() {
+            toggleReadStatus(index);
+        });
+        iconContainer.appendChild(readIcon);
+        //Add trashIcon
+        const trashIcon = document.createElement('i');
+        trashIcon.className = 'bx bxs-trash';
+        trashIcon.addEventListener('click', function(){
+            deleteBook(index)
+        });
+        iconContainer.appendChild(trashIcon);
+        bookDiv.appendChild(iconContainer);
 
         // Append the card to the container
         divInsertElement.appendChild(bookDiv);
     });
+}
+
+function toggleReadStatus(index) {
+    myLibrary[index].bookRead = !myLibrary[index].bookRead;  // Toggle read status
+    myLibrary[index].bookReadString = myLibrary[index].bookRead ? 'Book read' : 'Not read yet';  // Update read string
+    displayMyLibrary(myLibrary);  // Re-render the library
+}
+
+function deleteBook(index) {
+    myLibrary.splice(index, 1);
+    displayMyLibrary(myLibrary);
 }
 
 // Modal logic to make it dynamic

@@ -225,13 +225,16 @@ article {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.2rem;
     width: 80%;
 }
 
 .book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-size: 14px;
-    flex: 0 0 auto; /* This makes sure the book doesn't grow or shrink */
+    flex: 0 0 auto;
     height: 200px;
     width: 250px;
     font-size: 14px;
@@ -240,7 +243,27 @@ article {
     border-radius: 8px;
     border-top: 7px solid blueviolet;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 0.5rem; /* Optional, if you want to add some margin around each card */
+    margin: 0.5rem;
+}
+
+.detail-container {
+    line-height: 20px;
+}
+
+.detail-container p:first-child {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-container i {
+    font-size: 24px;
+    color: blueviolet;
+    cursor: pointer;
 }
 
 .book p {
