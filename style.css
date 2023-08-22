@@ -60,7 +60,7 @@ nav h2 a{
 .modal-content {
     background-color: #fff;
     margin: 10% auto;
-    padding: 20px;
+    padding: 1.25rem;
     border: none;
     width: 80%;
     max-width: 500px;
@@ -103,8 +103,8 @@ nav h2 a{
 .modal-content form input[type="number"],
 .modal-content form input[type="submit"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 0.625rem;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
@@ -167,11 +167,11 @@ nav h2 a{
     color: white;
     cursor: pointer;
     border: solid white;
-    margin-top: 15px;
+    margin-top: 1rem;
 }
 
 .modal-content form input[type="submit"]:hover {
-    margin-top: 15px;
+    margin-top: 1rem;
     background-color: white;
     color: blueviolet;
     border: solid blueviolet;
@@ -181,9 +181,9 @@ nav h2 a{
 .close {
     color: #aaa;
     position: absolute; 
-    top: 10px;  /* Adjusted to push it down slightly */
-    right: 20px;  /* Adjusted to push it inward from the right */
-    font-size: 24px;
+    top: 0.625rem;  /* Adjusted to push it down slightly */
+    right: 1.25rem;  /* Adjusted to push it inward from the right */
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -235,9 +235,8 @@ article {
     justify-content: space-between;
     font-size: 14px;
     flex: 0 0 auto;
-    height: 200px;
-    width: 250px;
-    font-size: 14px;
+    height: 12.5rem;
+    width: 15.75rem;
     padding: 1rem;
     background-color: white;
     border-radius: 8px;
@@ -252,7 +251,7 @@ article {
 
 .detail-container p:first-child {
     font-style: italic;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .icon-container {
@@ -267,10 +266,10 @@ article {
 }
 
 .book p {
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .book .title {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
