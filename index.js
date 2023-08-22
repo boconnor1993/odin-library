@@ -32,6 +32,7 @@ function displayMyLibrary(myLibrary) {
         // Add in the elements to the card
         const titlePara = document.createElement('p');
         titlePara.textContent = book.title;
+        titlePara.classList.add('title');
         bookDiv.appendChild(titlePara);
 
         const authorPara = document.createElement('p');
@@ -107,3 +108,13 @@ bookForm.addEventListener('submit', function(event) {
         alert('Please complete all fields')
     }
 })
+
+// Add some popular books as library dummy data
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, true);
+addBookToLibrary("1984", "George Orwell", 328, false);
+addBookToLibrary("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 309, true);
+addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
+addBookToLibrary("Moby-Dick", "Herman Melville", 720, false);
+
+// Display the library
+displayMyLibrary(myLibrary);

@@ -9,6 +9,7 @@
 html, body {
     height: 100%;
     overflow-x: hidden;
+    background-color: whitesmoke;
 }
 
 a {
@@ -165,12 +166,12 @@ nav h2 a{
     background-color: blueviolet;
     color: white;
     cursor: pointer;
-    border: none;
+    border: solid white;
     margin-top: 15px;
 }
 
 .modal-content form input[type="submit"]:hover {
-    margin-top: 12px;
+    margin-top: 15px;
     background-color: white;
     color: blueviolet;
     border: solid blueviolet;
@@ -193,11 +194,11 @@ nav h2 a{
     cursor: pointer;
 }
 
-
 /* Article */
 article {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     height: 90vh;
 }
@@ -209,7 +210,8 @@ article {
     font-size: large;
     background-color: blueviolet;
     color: white;
-    border: none;
+    border: solid white;
+    margin: 1rem;
 }
 
 #newBookBtn:hover {
@@ -218,6 +220,34 @@ article {
     border: solid blueviolet;
 }
 
-.book {
+/* Card Section */
+#card-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 80%;
+}
 
+.book {
+    font-size: 14px;
+    flex: 0 0 auto; /* This makes sure the book doesn't grow or shrink */
+    height: 200px;
+    width: 250px;
+    font-size: 14px;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    border-top: 7px solid blueviolet;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0.5rem; /* Optional, if you want to add some margin around each card */
+}
+
+.book p {
+    font-size: 16px;
+}
+
+.book .title {
+    font-weight: 600;
+    font-size: 20px;
 }
