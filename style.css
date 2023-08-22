@@ -166,7 +166,7 @@ nav h2 a{
     background-color: blueviolet;
     color: white;
     cursor: pointer;
-    border: solid white;
+    border: solid blueviolet;
     margin-top: 1rem;
 }
 
@@ -210,7 +210,7 @@ article {
     font-size: large;
     background-color: blueviolet;
     color: white;
-    border: solid white;
+    border: solid blueviolet;
     margin: 1rem;
 }
 
